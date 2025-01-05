@@ -1,0 +1,23 @@
+.nav {
+    background-color: black;
+    min-height: 100vh;
+    padding-top: 2rem;
+    padding-left: 2rem;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            margin-bottom: 1rem;
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .login {
+        position: absolute;
+        bottom: 2rem;
+    }
+}
