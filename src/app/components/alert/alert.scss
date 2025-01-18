@@ -1,0 +1,11 @@
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/alert";
+
+.floating-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+}
