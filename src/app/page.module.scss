@@ -1,7 +1,23 @@
 .hero {
-    height: 400px;
-    background: url("../../public/hero.webp") no-repeat;
-    color: white;
-    padding-left: 5rem;
-    padding-top: 10rem;
+    background-color: #02543c;
+
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #f7323f;
+    }
+
+    p {
+        color: white;
+        font-size: 24px;
+    }
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.margin-top {
+    margin-top: 50px;
 }
