@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "database:migrate": "npx prisma migrate dev"
   },
   "dependencies": {
@@ -27,7 +28,9 @@
     "bootstrap": "^5.3.3",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
+    "glob": "^11.0.1",
     "prisma": "^6.1.0",
+    "purgecss-webpack-plugin": "^7.0.2",
     "sass": "^1.83.0",
     "typescript": "^5"
   }

@@ -28,7 +28,7 @@ export class BooksComponent extends Component<BooksComponentProps, BooksComponen
     };
   }
 
-  async addBook(book: Partial<Book> | Partial<BookModel>, event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  async addBook(book: Partial<Book> | Partial<BookModel>) {
     const result = await saveBook(book as Partial<Book>);
     const message = result.success ? `Book added: ${result.book?.title}` : `Error adding book: ${book?.title}, verify you are logged in`;
     this.setState({
@@ -58,7 +58,7 @@ export class BooksComponent extends Component<BooksComponentProps, BooksComponen
         <td>{book.first_publish_year}</td>
         <td>
           {searchResult ? (
-            <button className="btn btn-success" onClick={(e) => this.addBook(book, e)}>
+            <button className="btn btn-success" onClick={() => this.addBook(book)}>
               Add
             </button>
           ) : (
