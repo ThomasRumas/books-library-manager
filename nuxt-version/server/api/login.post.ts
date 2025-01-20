@@ -1,32 +1,32 @@
 import prisma from '@/lib/prisma';
-import * as crypto from "crypto";
+import * as crypto from 'crypto';
 
 export default defineEventHandler(async (event) => {
-  // Use `readBody` to read the body of the POST request
-  const body = await readBody(event);
-
   try {
+    // Use `readBody` to read the body of the POST request
+    const body = await readBody(event);
     const hashedPassword = crypto
-      .createHash("sha512")
+      .createHash('sha512')
       .update(body.password)
-      .digest("hex");
-    
+      .digest('hex');
+
     const user = await findUserByEmail(body.email, hashedPassword);
 
     setCookie(event, 'user', user.id, {
-      path: '/', 
+      path: '/',
       sameSite: 'strict',
     });
 
     return {
-      sucess: true
-    }
+      sucess: true,
+    };
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
   } catch (error: any) {
-    console.error("Error logging in:", error);
-    return {
-      sucess: false,
-      message: error.message
-    }
+    throw createError({
+      statusCode: error.statusCode || 500, // HTTP status code
+      statusMessage: error.statusMessage || 'Internal Server Error', // Short message
+      message: error.message || '', // Optional detailed error message
+    });
   }
 });
 
@@ -38,12 +38,12 @@ async function findUserByEmail(email: string, password: string) {
       },
     });
 
-    if(password !== user?.password) {
-      throw new Error("Invalid password");
+    if (password !== user?.password) {
+      throw new Error('Invalid password');
     }
     return user;
   } catch (error) {
-    console.error("Error finding user by email:", error);
+    console.error('Error finding user by email:', error);
     throw error;
   } finally {
     await prisma.$disconnect();

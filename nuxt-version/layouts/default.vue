@@ -1,12 +1,14 @@
 <script setup>
-    import NavigationComponent from '@/components/navigation/navigation.vue';
-</script>  
+import NavigationComponent from '@/components/navigation/navigation.vue';
+</script>
 
 <template>
+  <div>
     <header>
-        <NavigationComponent />
+      <NavigationComponent />
     </header>
     <main className="col-12">
-        <slot></slot>
+      <slot />
     </main>
+  </div>
 </template>
