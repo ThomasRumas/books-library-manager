@@ -3,6 +3,7 @@
 import './search.scss';
 import { useState } from "react";
 import type { Book } from "@/app/services/open-library/dto/open-library.dto";
+import { BooksComponent } from "../books/books";
 
 export function SearchComponent() {
     const [books, setBooks] = useState<Book[]>([]);
@@ -23,7 +24,7 @@ export function SearchComponent() {
                         setBooks([]);
                         setBooks(await searchBooks(event, search));
                         setIsLoading(false);
-                    }}>Primary</button>
+                    }}>Search!</button>
                 </div>
                 {isLoading && <Spinner />}
                 {books.length > 0 && listBooks(books)}
@@ -40,16 +41,9 @@ function Spinner() {
     )
 }
 
-function listBooks(books: Book[]) {
+function listBooks(books: Array<Partial<Book>>) {
     return (
-        <ul className="list-group">
-            {books.map((book) => (
-                <li className="list-group-item" key={book.key}>
-                    <h5>{book.title}</h5>
-                    <p>{book.author_name}</p>
-                </li>
-            ))}
-        </ul>
+        <BooksComponent books={books} searchResult={true} />
     )
 }
 

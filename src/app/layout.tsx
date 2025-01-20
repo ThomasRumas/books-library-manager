@@ -15,16 +15,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="container-fluid">
-          <div className="row">
-            <header className="col-2 no-padding">
-              <NavigationComponent />
-            </header>
-            <main className="col-10 gx-0">
-              {children}
-            </main>
-          </div>
-        </div>
+        <header>
+          <NavigationComponent />
+        </header>
+        <main className="col-12">
+          {children}
+        </main>
       </body>
     </html>
   );
