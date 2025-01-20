@@ -39,7 +39,16 @@ export default async function Home() {
 
 function renderSearchComponent() {
   return(
-    <SearchComponent />
+    <div>
+      <div className={`${styles['margin-top']} container`}>
+        <div className="row">
+          <div className="col-12">
+            <h2>Your library seems to be empty or you're not logged in</h2>
+          </div>
+        </div>
+      </div>
+      <SearchComponent />
+    </div>
   )
 }
 

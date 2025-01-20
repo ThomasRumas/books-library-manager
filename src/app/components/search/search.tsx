@@ -24,7 +24,7 @@ export function SearchComponent() {
                         setBooks([]);
                         setBooks(await searchBooks(event, search));
                         setIsLoading(false);
-                    }}>Primary</button>
+                    }}>Search!</button>
                 </div>
                 {isLoading && <Spinner />}
                 {books.length > 0 && listBooks(books)}

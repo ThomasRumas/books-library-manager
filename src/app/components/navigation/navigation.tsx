@@ -1,6 +1,10 @@
 import styles from './navigation.module.scss';
+import { cookies } from 'next/headers';
+import { logout } from './actions';
 
-export function NavigationComponent() {
+export async function NavigationComponent() {
+    const cookieStore = await cookies();
+    const userId = cookieStore.get('user')?.value;
     return(
         <div className={styles.nav}>
             <nav className={`container`}>
@@ -12,17 +16,33 @@ export function NavigationComponent() {
                         </ul>
                     </div>
                     <div className={`col-4 ${styles['txt-right']}`}>
-                        <ul>
-                            <li>
-                                <a href="/login">Login</a>
-                            </li>
-                            <li>
-                                <a href="/login/register">Register</a>
-                            </li>
-                        </ul>
+                        {userId ? renderLogout() : renderLoginAndRegister()}
                     </div>
                 </div>
             </nav>
         </div>
+    )
+}
+
+function renderLoginAndRegister() {
+    return(
+        <ul>
+            <li>
+                <a href="/login">Login</a>
+            </li>
+            <li>
+                <a href="/login/register">Register</a>
+            </li>
+        </ul>
+    )
+}
+
+function renderLogout() {
+    return(
+        <ul>
+            <li>
+                <a href='#' onClick={logout}>Logout</a>
+            </li>
+        </ul>
     )
 }
