@@ -96,3 +96,24 @@ In contrast, Next.js requires third-party libraries for state management, which 
 | **JS**      | -                          | 93.4 KB       | 120 KB        |
 
 You can also find Lighthouse report performed on the same machine, both of solution respect Google Web Vitals. Next as a built-in support for GZIP compression for HTML therefore we do it manually inside [Nuxt](./nuxt-version/server/plugins/gzip.ts) 
+
+## State of JS 2024
+
+We will know compare last results of [State of JS Survey](https://2024.stateofjs.com/) about theses two frameworks and theses two meta-framework. 
+
+### React 
+
+React is still the one most used worldwide with a result of 82%, this score is stable since 3 years. Globally all the technical stack based on React is remaining alive. But when we've got a look interest, it continually to slown down to 34% this year, in 2022 the score was 47%! 
+If we are now looking for the retention of developers on this stack, it's also stable since last year, and we've got a score of 75%. 
+
+### VueJS 
+
+VueJS is still the second framework used on the market with a usage of 51%, the same result as 2021, we can be agree, like React, that projects made with Vue are still alive. Also the interest of VueJS still remained the same since 2021 with a score of 48%. But there is growth in VueJS retention of 12%, passing from 75% to 87%, it's an interesting growth for a framework available since 8 years on the survey! 
+
+### NextJS (React)
+
+If we are looking about NextJS, it's still the meta framework the most used worldwide with 54% scoring, but interest fell by 22 points in 2 years from 65% to 43% in 2024! If we have a look on the retention it have the same tendancy, passing from 89% in 2022 to 68% in 2024. Therefore Vercel continues to improve their framework, interest and retention are going down quickly. 
+
+### Nuxt (Vue)
+
+Like VueJS, Nuxt is the second on the market with a usage of 22%, the Nuxt interest seems stable since 2020, it only lost 8% since, passing from 47% to 39%, but when it's interesting, the retention has grown a litle from last year, winning 5 points to be now 81%. 
