@@ -87,8 +87,7 @@ In comparison, Next.js requires more manual setup for cookies and lacks a native
 
 In contrast, Next.js requires third-party libraries for state management, which can increase complexity and setup time. This makes Nuxt a more out-of-the-box solution for projects that need straightforward state management.
 
-
-## Web Performance comparaison
+## Web Performance comparaison
 
 | Asset Type  | Nuxt (without compression) | Nuxt (GZIP)   | Next (GZIP)   |
 |-------------|----------------------------|---------------|---------------|
