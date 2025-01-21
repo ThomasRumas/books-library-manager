@@ -13,5 +13,8 @@ export default defineNuxtConfig({
         '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js',
       },
     },
+  },
+  nitro: {
+    compressPublicAssets: { gzip: true, brotli: false },
   }
 });
